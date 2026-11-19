@@ -1,7 +1,7 @@
 // Default remote assets for the ONNX model, label file, and runtime bundle.
 // Keeping these in one place makes it easy to swap model versions or mirror assets.
-export const DEFAULT_MODEL_URL = "https://cdn.victrix.io/handwriting-moe/DaKanji-v2.0-model.onnx";
-export const DEFAULT_LABELS_URL = "https://cdn.victrix.io/handwriting-moe/DaKanji-v2.0-labels.txt";
+export const DEFAULT_MODEL_URL = "./data/char_classifier.onnx";
+export const DEFAULT_LABELS_URL = "./data/char_classifier_labels.txt";
 export const DEFAULT_ORT_URL = "https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/ort.min.js";
 
 export type TensorLayout = "NCHW" | "NHWC" | "NHW" | "HW" | "FLAT";
@@ -10,7 +10,7 @@ export type InkColor = "white" | "black";
 export type OutputMode = "logits" | "probabilities";
 
 // Runtime configuration shared by preprocessing, model loading, and ranking.
-export interface TegakiConfig {
+export interface MojiConfig {
   modelUrl: string;
   ortUrl: string;
   labelsUrl: string;
@@ -30,7 +30,7 @@ export interface TegakiConfig {
   outputName?: string;
 }
 
-export const DEFAULT_CONFIG: TegakiConfig = {
+export const DEFAULT_CONFIG: MojiConfig = {
   modelUrl: DEFAULT_MODEL_URL,
   ortUrl: DEFAULT_ORT_URL,
   labelsUrl: DEFAULT_LABELS_URL,

@@ -1,8 +1,8 @@
-<svelte:options customElement={{ tag: "tegaki-moe", props: { canvasResolution: { type: "Number" }, size: { type: "Number" }, rows: { type: "Number" }, copyToClipboard: { type: "Boolean" } } }} />
+<svelte:options customElement={{ tag: "moji-moe", props: { canvasResolution: { type: "Number" }, size: { type: "Number" }, rows: { type: "Number" }, copyToClipboard: { type: "Boolean" } } }} />
 
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
-  import { DEFAULT_CONFIG, type TegakiConfig } from "./config";
+  import { DEFAULT_CONFIG, type MojiConfig } from "./config";
   import { parseLabels, type Candidate } from "./core";
   import { DrawingPad } from "./drawing";
   import { preprocess } from "./preprocess";
@@ -122,7 +122,7 @@
 
   async function loadRecognizer(): Promise<void> {
     modelLoading = true;
-    const settings: TegakiConfig = { ...DEFAULT_CONFIG, modelUrl, labelsUrl, ortUrl, topK };
+    const settings: MojiConfig = { ...DEFAULT_CONFIG, modelUrl, labelsUrl, ortUrl, topK };
     try {
       const modelResponse = await fetchAsset(settings.modelUrl);
       if (!modelResponse) throw new Error(`Missing ${settings.modelUrl}.`);
@@ -187,7 +187,7 @@
   });
 </script>
 
-<section class="tegaki-moe" style:width={`${size}px`} aria-label="Kanji handwriting panel">
+<section class="moji-moe" style:width={`${size}px`} aria-label="Kanji handwriting panel">
   <div class="pad">
     <canvas bind:this={canvasEl} width={canvasResolution} height={canvasResolution} aria-label="Handwriting canvas"></canvas>
   </div>
@@ -217,7 +217,7 @@
 </section>
 
 <style>
-  .tegaki-moe {
+  .moji-moe {
     box-sizing: border-box;
     margin: 0 auto;
     font-family: system-ui, sans-serif;

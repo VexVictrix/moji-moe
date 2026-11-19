@@ -8,7 +8,7 @@ export default defineConfig({
 		lib: {
 			entry: "src/index.ts",
 			formats: ["es"],
-			fileName: "tegaki-moe",
+			fileName: "moji-moe",
 		},
 	},
 });

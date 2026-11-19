@@ -1,12 +1,12 @@
-# Tegaki-moe
+# Moji-Moe
 
-A kanji and kana handwriting recognition Svelte component, packaged as a standalone web component. Draw a character on the canvas and get ranked recognition candidates, powered by an ONNX model (DaKanji v2.0) running in the browser via onnxruntime-web.
+A kanji and kana drawing optical character recognition Svelte component, packaged to be framework-agnostic. Draw a character on the canvas and get ranked recognition candidates, powered by an ONNX model (DaKanji v2.0) running in the browser via onnxruntime-web.
 
 ## Features
 
 - Handwriting recognition for Japanese kanji and kana
-- Runs entirely in the browser (no server-side inference)
-- Framework-agnostic `<tegaki-moe>` custom element, built with Svelte
+- Runs entirely in the browser (no server-side processing)
+- Framework-agnostic `<moji-moe>` custom element, built with Svelte
 - Configurable model input preprocessing (tensor layout, normalization, ink color, cropping, top-K results)
 
 ## Build
@@ -16,16 +16,15 @@ npm install
 npm run build
 ```
 
-This outputs `dist/tegaki-moe.mjs`.
+This outputs `dist/moji-moe.mjs`.
 
 ## Usage
 
 Include the built bundle and place the element in your HTML:
 
 ```html
-<script type="module" src="./dist/tegaki-moe.mjs"></script>
-
-<tegaki-moe></tegaki-moe>
+<script type="module" src="./dist/moji-moe.mjs"></script>
+<moji-moe></moji-moe>
 ```
 
 Open [index.html](index.html) for a minimal working example (serve the folder with any static file server after building).
@@ -33,13 +32,13 @@ Open [index.html](index.html) for a minimal working example (serve the folder wi
 You can also import it from JavaScript/TypeScript:
 
 ```ts
-import { TegakiMoe, DEFAULT_CONFIG } from "tegaki-moe";
-import type { Candidate, TegakiConfig } from "tegaki-moe";
+import { TegakiMoe, DEFAULT_CONFIG } from "moji-moe";
+import type { Candidate, TegakiConfig } from "moji-moe";
 ```
 
 ## Configuration
 
-The component can be configured with a `TegakiConfig` object (see [src/config.ts](src/config.ts)). Defaults point to remotely hosted model assets:
+The component can be configured with a `MojiConfig` object (see [src/config.ts](src/config.ts)). Defaults point to remotely hosted model assets:
 
 | Option | Default | Description |
 | --- | --- | --- |
@@ -56,6 +55,6 @@ The component can be configured with a `TegakiConfig` object (see [src/config.ts
 | `outputMode` | `"logits"` | Interpret model output as `logits` or `probabilities` |
 | `topK` | `20` | Number of ranked candidates to return |
 
-## License
+## Credit
 
-MIT
+Based on the [DaKanji](https://github.com/dariyooo/DaKanji-Single-Kanji-Recognition) model.

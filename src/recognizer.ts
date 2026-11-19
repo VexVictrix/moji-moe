@@ -1,5 +1,5 @@
 import { rankOutput, type Candidate } from "./core";
-import type { TegakiConfig } from "./config";
+import type { MojiConfig } from "./config";
 
 // Minimal shape of the onnxruntime-web global needed by this module. The real
 // package is loaded from a CDN <script> tag at runtime (see loadOrt below), so we
@@ -106,12 +106,12 @@ export class Recognizer {
   private constructor(
     private readonly ort: OrtNamespace,
     private readonly session: OrtInferenceSession,
-    readonly settings: TegakiConfig,
+    readonly settings: MojiConfig,
     private readonly labels: string[] | null,
   ) {}
 
   // Build an inference session with the configured model and runtime settings.
-  static async create(model: Uint8Array, settings: TegakiConfig, labels: string[] | null): Promise<Recognizer> {
+  static async create(model: Uint8Array, settings: MojiConfig, labels: string[] | null): Promise<Recognizer> {
     const ort = await loadOrt(settings.ortUrl);
     const session = await ort.InferenceSession.create(model, { executionProviders: ["wasm"] });
     try {

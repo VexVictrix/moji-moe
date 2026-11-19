@@ -1,4 +1,4 @@
-import type { InputType, InkColor, OutputMode, TegakiConfig } from "./config";
+import type { InputType, InkColor, OutputMode, MojiConfig } from "./config";
 
 // A single ranked candidate produced from model output plus its label.
 export interface Candidate {
@@ -42,7 +42,7 @@ export function findInkBounds(rgba: Uint8ClampedArray, width: number, height: nu
 
 // Model inputs are expected in a specific layout; this helper converts our image size
 // into the tensor shape required by the ONNX model.
-export function inputDimensions(config: Pick<TegakiConfig, "width" | "height" | "layout">): number[] {
+export function inputDimensions(config: Pick<MojiConfig, "width" | "height" | "layout">): number[] {
   const { width: w, height: h } = config;
   switch (config.layout) {
     case "NCHW": return [1, 1, h, w];

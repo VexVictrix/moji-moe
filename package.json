@@ -1,7 +1,7 @@
 {
-  "name": "tegaki-moe",
-  "version": "0.1.0",
-  "description": "A kanji and kana handwriting recognition Svelte component",
+  "name": "moji-moe",
+  "version": "0.1.1",
+  "description": "A kanji and kana handwriting recognition HTML component",
   "main": "index.ts",
   "scripts": {
 	"build": "vite build",
@@ -12,8 +12,8 @@
   "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
-    "@sveltejs/vite-plugin-svelte": "^7.3.0",
+    "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "typescript": "^7.0.2",
-    "vite": "^8.2.2"
+    "vite": "^8.3.8"
   }
 }

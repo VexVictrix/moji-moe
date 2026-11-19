@@ -1,10 +1,10 @@
-import TegakiMoe from "./TegakiMoe.svelte";
+import MojiMoe from "./MojiMoe.svelte";
 
-if (!customElements.get("tegaki-moe")) {
-	customElements.define("tegaki-moe", TegakiMoe);
+if (!customElements.get("moji-moe")) {
+	customElements.define("moji-moe", MojiMoe as unknown as CustomElementConstructor);
 }
 
-export { TegakiMoe };
+export { MojiMoe };
 export type { Candidate } from "./core";
-export type { TegakiConfig } from "./config";
+export type { MojiConfig } from "./config";
 export { DEFAULT_CONFIG } from "./config";

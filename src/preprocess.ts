@@ -1,5 +1,5 @@
 import { findInkBounds, pixelValues, inputDimensions } from "./core";
-import type { TegakiConfig } from "./config";
+import type { MojiConfig } from "./config";
 
 export interface PreprocessedImage {
   pixels: Uint8Array | Float32Array;
@@ -9,7 +9,7 @@ export interface PreprocessedImage {
 
 // Convert the browser canvas into the normalized tensor representation used by the model.
 // This centers the ink, crops whitespace, and scales the stroke to fit the model input size.
-export function preprocess(source: HTMLCanvasElement, config: TegakiConfig): PreprocessedImage | null {
+export function preprocess(source: HTMLCanvasElement, config: MojiConfig): PreprocessedImage | null {
   const { width, height, padding } = config;
   if (!Number.isInteger(width) || !Number.isInteger(height) || width < 1 || height < 1 ||
       width > 2048 || height > 2048 || !Number.isFinite(padding) || padding < 0 || padding >= 0.5) {
