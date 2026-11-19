@@ -1,6 +1,6 @@
 # Moji-Moe
 
-A kanji and kana drawing optical character recognition Svelte component, packaged to be framework-agnostic. Draw a character on the canvas and get ranked recognition candidates, powered by an ONNX model (DaKanji v2.0) running in the browser via onnxruntime-web.
+A kanji and kana optical character recognition Svelte component, packaged to be used from plain HTML. Just draw a kana/kanji and get matches to copy to clipboard. Draw a character on the canvas and get ranked recognition candidates, powered by an ONNX model (DaKanji v2.0) running in the browser via onnxruntime-web.
 
 ## Features
 
@@ -32,8 +32,8 @@ Open [index.html](index.html) for a minimal working example (serve the folder wi
 You can also import it from JavaScript/TypeScript:
 
 ```ts
-import { TegakiMoe, DEFAULT_CONFIG } from "moji-moe";
-import type { Candidate, TegakiConfig } from "moji-moe";
+import { MojiMoe, DEFAULT_CONFIG } from "moji-moe";
+import type { Candidate, MojiConfig } from "moji-moe";
 ```
 
 ## Configuration
