@@ -1,13 +1,17 @@
 # Moji-Moe
 
-A kanji and kana optical character recognition Svelte component, packaged to be used from plain HTML. Just draw a kana/kanji and get matches to copy to clipboard. Draw a character on the canvas and get ranked recognition candidates, powered by an ONNX model (DaKanji v2.0) running in the browser via onnxruntime-web.
+A kanji and kana optical character recognition Svelte component, packaged to be used from plain HTML. Just draw a kana/kanji and get ranked recognition candidates to copy to clipboard. Ppowered by an ONNX model (DaKanji v2.0) running in the browser via onnxruntime-web.
 
 ## Features
 
 - Handwriting recognition for Japanese kanji and kana
 - Runs entirely in the browser (no server-side processing)
-- Framework-agnostic `<moji-moe>` custom element, built with Svelte
+- Portable `<moji-moe>` custom element, built with Svelte
 - Configurable model input preprocessing (tensor layout, normalization, ink color, cropping, top-K results)
+
+## Preview
+
+Click [here]() for a live web preview.
 
 ## Build
 
@@ -16,18 +20,16 @@ npm install
 npm run build
 ```
 
-This outputs `dist/moji-moe.mjs`.
+This outputs `dist/moji-moe.js`.
 
 ## Usage
 
 Include the built bundle and place the element in your HTML:
 
 ```html
-<script type="module" src="./dist/moji-moe.mjs"></script>
+<script type="module" src="./dist/moji-moe.js"></script>
 <moji-moe></moji-moe>
 ```
-
-Open [index.html](index.html) for a minimal working example (serve the folder with any static file server after building).
 
 You can also import it from JavaScript/TypeScript:
 
