@@ -4,7 +4,7 @@
   "description": "A kanji and kana handwriting recognition HTML component",
   "main": "index.ts",
   "scripts": {
-	"build": "vite build",
+    "build": "vite build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,6 +13,7 @@
   "type": "module",
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "terser": "^5.51.2",
     "typescript": "^7.0.2",
     "vite": "^8.3.8"
   }

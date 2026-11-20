@@ -1,5 +1,6 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
+import pkg from './package.json' with { type: 'json' };
 
 export default defineConfig({
 	plugins: [
@@ -15,7 +16,8 @@ export default defineConfig({
 		lib: {
 			entry: "src/index.ts",
 			formats: ["es"],
-			fileName: "moji-moe",
+			fileName: `moji-moe-${pkg.version}.min`,
 		},
+		minify: "terser",
 	},
 });
